@@ -2,8 +2,9 @@
 
 namespace MediaBundle\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
+
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Album
@@ -12,9 +13,6 @@ class Album
 {
     private $commentaire;
 
-    public function __construct() {
-        $this->commentaire = new ArrayCollection();
-    }
     /**
      * @var int
      */
@@ -141,5 +139,24 @@ class Album
     public function getSupport()
     {
         return $this->support;
+    }
+
+    /**
+     * @ORM\Column(type="string")
+     *
+     * @Assert\Image(mimeTypes={ "image/*" })
+     */
+    private $picture;
+
+    public function getPicture()
+    {
+        return $this->picture;
+    }
+
+    public function setPicture($picture)
+    {
+        $this->picture = $picture;
+
+        return $this;
     }
 }

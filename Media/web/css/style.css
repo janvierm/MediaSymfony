@@ -1,3 +1,5 @@
-.new-form {
-    margin-left: 20px;
+.form {
+    margin-left: 100px;
+    border-spacing: 20px;
+    border-collapse: separate;
 }

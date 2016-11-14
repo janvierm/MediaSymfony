@@ -4,6 +4,7 @@ namespace MediaBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -30,7 +31,10 @@ class AlbumType extends AbstractType
             'Cassette' => true,
         ),
         // *this line is important*
-        'choices_as_values' => true,));;
+        'choices_as_values' => true,))
+        ->add('picture', FileType::class, array(
+            'label' => 'Photo',
+            'required' => false,));
     }
     
     /**

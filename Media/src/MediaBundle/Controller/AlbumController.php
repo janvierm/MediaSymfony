@@ -118,7 +118,20 @@ class AlbumController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('_delete', array('id' => $album->getId())))
             ->setMethod('DELETE')
-            ->getForm()
-        ;
+            ->getForm();
+    }
+
+    public function uploadAction(Request $request)
+    {
+        // ...
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $file = $album->getPicture();
+            $fileName = $this->get('app.picture_uploader')->upload($file);
+
+            $album->setPicture($fileName);
+
+            // ...
+        }
     }
 }
