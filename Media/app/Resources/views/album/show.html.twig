@@ -10,7 +10,7 @@
                 <td>{{ album.id }}</td>
             </tr>
             <tr>
-                <th>Title</th>
+                <th>Titre</th>
                 <td>{{ album.title }}</td>
             </tr>
             <tr>
@@ -30,14 +30,14 @@
 
     <ul>
         <li>
-            <a href="{{ path('_index') }}">Back to the list</a>
+            <a href="{{ path('_index') }}">Retour à la liste</a>
         </li>
         <li>
-            <a href="{{ path('_edit', { 'id': album.id }) }}">Edit</a>
+            <a href="{{ path('_edit', { 'id': album.id }) }}">Modifier</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" value="Supprimer">
             {{ form_end(delete_form) }}
         </li>
     </ul>

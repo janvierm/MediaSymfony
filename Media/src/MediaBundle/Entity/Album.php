@@ -2,6 +2,7 @@
 
 namespace MediaBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -9,6 +10,11 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Album
 {
+    private $commentaire;
+
+    public function __construct() {
+        $this->commentaire = new ArrayCollection();
+    }
     /**
      * @var int
      */

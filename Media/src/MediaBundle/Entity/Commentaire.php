@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Commentaire
 {
+    private $album;
     /**
      * @var int
      */

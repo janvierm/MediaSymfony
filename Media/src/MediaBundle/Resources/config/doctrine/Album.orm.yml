@@ -1,5 +1,9 @@
 MediaBundle\Entity\Album:
     type: entity
+    manyToOne:
+        commentaire:
+            targetEntity: MediaBundle\Entity\Commentaire
+            inversedBy: album
     table: null
     repositoryClass: MediaBundle\Repository\AlbumRepository
     id:

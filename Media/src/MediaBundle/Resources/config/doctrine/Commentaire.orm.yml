@@ -1,5 +1,9 @@
 MediaBundle\Entity\Commentaire:
     type: entity
+    oneToMany:
+        album:
+            targetEntity: MediaBundle\Entity\Album
+            mappedBy: commentaire
     table: null
     repositoryClass: MediaBundle\Repository\CommentaireRepository
     id:
